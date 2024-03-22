@@ -5,7 +5,7 @@ import com.project.crudclient.entities.Client;
 import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 
-public class ClientDTO {
+public class    ClientDTO {
     private Long id;
     @NotBlank(message = "Nome Obrigatorio")
     @Size(min = 3, max = 45, message = "Corrija para o padrão")

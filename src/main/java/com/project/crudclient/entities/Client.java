@@ -12,9 +12,8 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Nome Obrigatorio")
-    @Size(min = 3, max = 45, message = "Corrija para o padrão")
     private String name;
+    @Column(unique = true)
     private String cpf;
     private Double income;
     private LocalDate birthDate;

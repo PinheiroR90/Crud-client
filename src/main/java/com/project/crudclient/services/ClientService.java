@@ -6,7 +6,6 @@ import com.project.crudclient.repositories.ClientRepository;
 import com.project.crudclient.services.exceptions.NotFoundClientException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -58,8 +57,11 @@ public class ClientService {
       try {
           clientRepository.deleteById(id);
       }
-      catch (EntityNotFoundException  | EmptyResultDataAccessException | DataIntegrityViolationException e){
+      catch (EntityNotFoundException  | EmptyResultDataAccessException  e){
           throw new NotFoundClientException("Cliente "+ id+ " inexistente");
+      }
+      catch (DataIntegrityViolationException e){
+          throw  new NotFoundClientException("Falha de Integridade Referencial");
       }
     }
 

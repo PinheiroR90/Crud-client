@@ -14,23 +14,6 @@ public class CustomError {
         this.error = error;
         this.path = path;
     }
-
-    public void setTimestamp(Instant timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
     public Instant getTimestamp() {
         return timestamp;
     }
